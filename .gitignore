@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+*.iml
+vcs.xml
+modules.xml
+Project_Default.xml
