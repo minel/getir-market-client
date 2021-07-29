@@ -1,0 +1,15 @@
+header.app-header {
+  height: 77px;
+  background-color: #1EA4CE;
+  display: flex;
+  justify-content: space-between;
+
+  .placeholder {
+    width: 128px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+}
