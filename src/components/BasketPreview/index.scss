@@ -1,5 +1,5 @@
 .basket-preview {
-  padding: 0 27px;
+  width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,5 +12,9 @@
   img {
     width: 13px;
     margin-right: 13px;
+  }
+
+  .price-box {
+    color: #FFFFFF;
   }
 }

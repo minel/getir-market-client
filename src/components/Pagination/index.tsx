@@ -23,6 +23,18 @@ type IPaginationProps = {
 
 const PaginationBase: React.FC<any> = (props: IPaginationProps) => {
 
+  const onPrevClick = () => {
+    if (props.activePage > 1) {
+      props.getProducts(props.activePage - 1, DEFAULT_PRODUCT_PAGE_LIMIT);
+    }
+  };
+
+  const onNextClick = () => {
+    if (props.activePage < props.totalPage) {
+      props.getProducts(props.activePage + 1, DEFAULT_PRODUCT_PAGE_LIMIT);
+    }
+  };
+
   const onPageNumberClick: React.MouseEventHandler<HTMLAnchorElement> = (event: BaseSyntheticEvent) => {
     const pageNumber = event.target.dataset && event.target.dataset.pageId && Number(event.target.dataset.pageId);
     if (pageNumber > 0) {
@@ -60,11 +72,11 @@ const PaginationBase: React.FC<any> = (props: IPaginationProps) => {
 
   return (
     <div className={'pagination'}>
-      <a className={'navigation prev'}>
+      <a onClick={onPrevClick} className={'navigation prev'}>
         <PrevButton />
       </a>
       {props.totalPage > PAGINATION_SHOW_FIRST_AND_LAST_PAGES_LIMIT ? renderFirstAndLastPageNumbers() : renderPageNumbers()}
-      <a className={'navigation next'}>
+      <a onClick={onNextClick} className={'navigation next'}>
         <NextButton />
       </a>
     </div>
