@@ -1,0 +1,15 @@
+.add-to-basket {
+  background-color: #1EA4CE;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #61dafb;
+  }
+}

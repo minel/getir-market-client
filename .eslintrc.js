@@ -30,6 +30,7 @@ module.exports = {
         "object-curly-spacing": [2, "always", {
             "objectsInObjects": false,
             "arraysInObjects": false
-        }]
+        }],
+        "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 };
