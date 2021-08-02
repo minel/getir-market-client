@@ -5,15 +5,14 @@ import { Pagination } from "../Pagination";
 import { ProductCard } from "../ProductCard";
 import { ProductsState } from "../../reducers/productsReducer";
 import React from 'react';
-import { connect } from "react-redux";
-import { getProducts } from "../../actions/productsActions";
-import { useEffect } from 'react';
-// todo: muhtemelen add to basket action'ı bağlanacak
+import { useSelector } from "react-redux";
 
-type IProductsProps = ProductsState;
+type IProductsProps = {
+};
 
-const ProductsBase: React.FC<any> = (props: IProductsProps ) => {
-  const { products, isLoading, totalCount } = props;
+export const Products: React.FC<any> = (props: IProductsProps ) => {
+  const { products, totalCount, isLoading } = useSelector((state: any) => state.productsReducer as ProductsState);
+
   return (
     <section className={'products'}>
       <h2>Products</h2>
@@ -31,16 +30,3 @@ const ProductsBase: React.FC<any> = (props: IProductsProps ) => {
     </section>
   )
 };
-
-
-const mapStateToProps = (combinedState: any) => {
-  const { products, totalCount, isLoading } = combinedState.productsReducer as ProductsState;
-  return {
-    products,
-    totalCount,
-    isLoading
-  };
-};
-
-export const Products = connect(mapStateToProps, null)(ProductsBase);
-

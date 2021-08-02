@@ -1,25 +1,25 @@
 import './index.scss';
-import { BasketState } from "../../reducers/basketReducer";
 import { IBasketItem } from "../../models/IBasketItem";
 import { PriceBox } from "../PriceBox";
 import React from 'react';
 import basketIcon from '../../assets/basket-icon.svg';
-import { connect } from "react-redux";
 import { useCallback } from 'react';
+import { useSelector } from "react-redux";
 
 type IBasketPreviewProps = {
-	itemList: IBasketItem[];
+
 };
 
-export const BasketPreviewBase: React.FC<any> = (props: IBasketPreviewProps) => {
+export const BasketPreview: React.FC<any> = (props: IBasketPreviewProps) => {
+  const itemList = useSelector((state: any) => state.basketReducer.itemList as IBasketItem[]);
 
 	const calculateTotalQuantity = useCallback(() => {
 		let totalPrice =  0;
-		props.itemList.forEach((item) => {
+		itemList.forEach((item) => {
 			totalPrice = totalPrice + (item.price * item.quantity);
 		});
 		return totalPrice;
-	}, [props.itemList]);
+	}, [itemList]);
 
 	return (
 		<div className={"basket-preview"}>
@@ -28,12 +28,3 @@ export const BasketPreviewBase: React.FC<any> = (props: IBasketPreviewProps) => 
 		</div>
 	);
 };
-
-const mapStateToProps = (combinedState: any) => {
-	const { itemList } = combinedState.basketReducer as BasketState;
-	return {
-		itemList
-	};
-};
-
-export const BasketPreview = connect(mapStateToProps, null)(BasketPreviewBase);

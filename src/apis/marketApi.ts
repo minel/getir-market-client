@@ -1,5 +1,6 @@
 import { DEFAULT_PRODUCT_PAGE_LIMIT, DEFAULT_PRODUCT_PAGE_NUMBER, MARKET_API_URL } from "../constants";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { ICompany } from "../models/ICompany";
 import { mapGetProductsResponse } from "./mappers/marketApiResponseMapper";
 
 export const getApiProducts = async (page: number = DEFAULT_PRODUCT_PAGE_NUMBER, limit: number = DEFAULT_PRODUCT_PAGE_LIMIT) => {
@@ -8,6 +9,19 @@ export const getApiProducts = async (page: number = DEFAULT_PRODUCT_PAGE_NUMBER,
 
     if (response) {
       return mapGetProductsResponse(response);
+    }
+    return null;
+  } catch {
+    return null;
+  }
+};
+
+export const getApiCompanies = async () => {
+  try {
+    const response: AxiosResponse<ICompany[]> = await axios.get(`${MARKET_API_URL}/companies`);
+
+    if (response && response.data) {
+      return response.data;
     }
     return null;
   } catch {
