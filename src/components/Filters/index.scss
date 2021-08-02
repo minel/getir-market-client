@@ -1,31 +1,5 @@
-.product-card {
-  display: flex;
-  flex-direction: column;
-  width: 22%;
-  margin-bottom: 15px;
-
-  .image-frame {
-    border: 1px solid #F3F0FE;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-
-    img {
-      width: 92px;
-      height: 92px;
-      background-color: gray;
-    }
-  }
-
-  .product-name {
-    margin: 8px 0;
-    font-size: 14px;
-    font-weight: bold;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+.filters {
+  > div + div {
+    margin-top: 20px;
   }
 }

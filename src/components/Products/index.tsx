@@ -16,7 +16,7 @@ export const Products: React.FC<any> = (props: IProductsProps ) => {
   return (
     <section className={'products'}>
       <h2>Products</h2>
-      <div>tags</div>
+      {/* todo: <div>tags</div>*/}
       <div className={'product-container'}>
         {isLoading ? <div>Products Loading...</div> :
           products.map((product: IProduct) => (

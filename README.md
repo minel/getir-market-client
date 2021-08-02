@@ -11,7 +11,7 @@ A client project for Getir Web Market
 - **Axios** for Http Client
 
 ## Project Structure
-![Structure](https://i.ibb.co/tBFpBf0/design.png)
+![Structure](https://i.ibb.co/QbN0jsp/design.png)
 
 ## Deployment
 Project already running on Heroku, you can explore below in url.
