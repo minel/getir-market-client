@@ -4,9 +4,7 @@
   margin-bottom: 15px;
 
   input[type="radio"] {
-    -webkit-box-shadow: 0 0 10px -3px rgba(93, 56, 192,0.75);
-    -moz-box-shadow: 0 0 10px -3px rgba(93, 56, 192,0.75);
-    box-shadow: 0 0 10px -3px rgba(93, 56, 192,0.75);
+    transition: all .3s ease;
     position: relative;
     width: 22px;
     height: 22px;
@@ -16,23 +14,24 @@
     appearance: none;
     outline: 0;
     cursor: pointer;
-    transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+    border: 2px solid #DFDEE2;
     &::before {
       position: absolute;
       content: '';
       display: block;
       top: 2px;
-      left: 8px;
-      width: 5px;
-      height: 12px;
+      left: 6px;
+      width: 4px;
+      height: 10px;
       border-style: solid;
-      border-color: #FFFFFF;
+      border-color: #1EA4CE;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
       opacity: 0;
     }
     &:checked {
-      background: #1EA4CE;
+      background: #FFFFFF;
+      border-color: #1ea4ce;
       &::before {
         opacity: 1;
       }
