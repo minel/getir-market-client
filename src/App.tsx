@@ -20,7 +20,7 @@ export const App = (props: any): JSX.Element => {
   });
 
   return (
-    <div className="App">
+    <div className="App" role={'main app'}>
       <Header />
       <ProductListing />
     </div>
