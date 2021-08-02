@@ -18,7 +18,7 @@ export const Products: React.FC<any> = (props: IProductsProps ) => {
       <h2>Products</h2>
       <div>tags</div>
       <div className={'product-container'}>
-        {isLoading ? <div>isLoading</div> :
+        {isLoading ? <div>Products Loading...</div> :
           products.map((product: IProduct) => (
             <ProductCard key={product.added} product={product} />
           ))
