@@ -30,7 +30,7 @@ export const Basket: React.FC<any> = (props: IBasketProps) => {
 	};
 
 	const renderBasketItems = () => {
-		return itemList.map((item, index) => {
+		const basketItems = itemList.map((item, index) => {
 			if (item.quantity < 1) return;
 			return(
 				<div key={`basket_item_${index}`}>
@@ -49,6 +49,11 @@ export const Basket: React.FC<any> = (props: IBasketProps) => {
 				</div>
 			)
 		});
+
+		if (basketItems.every(e => e === undefined)) {
+			return (<div className={'no-item'}>No Item</div>);
+		}
+		return basketItems;
 	};
 
 	return (

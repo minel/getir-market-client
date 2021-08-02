@@ -1,31 +1,79 @@
-.product-card {
-  display: flex;
-  flex-direction: column;
-  width: 22%;
-  margin-bottom: 15px;
+.filter {
+  width: 296px;
 
-  .image-frame {
-    border: 1px solid #F3F0FE;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 12px;
+  .filter-name {
+    font-weight: bold;
+    font-size: 13px;
+    color: #697488;
     margin-bottom: 10px;
+  }
 
-    img {
-      width: 92px;
-      height: 92px;
-      background-color: gray;
+  .filter-items {
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 20px;
+
+    .items-search {
+      display: flex;
+      input {
+        transition: all 0.3s ease;
+
+        width: 100%;
+        height: 48px;
+        box-sizing: border-box;
+        border: 1px solid #d4d4d4;
+        border-radius: 3px;
+        font-size: 14px;
+        letter-spacing: .14px;
+        color: #697488;
+        background-color: transparent;
+        line-height: 30px;
+        padding: 0 10px;
+
+        &:focus {
+          outline: none !important;
+          border:1px solid #E0E0E0;
+          box-shadow: 0 0 5px #719ECE;
+        }
+      }
+    }
+
+    .items-box {
+      max-height: 244px;
+      overflow-y: auto;
+      padding-left: 5px;
+      padding-top: 5px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+
+      .no-result {
+        font-size: 14px;
+        color: #697488;
+        letter-spacing: .14px;
+      }
     }
   }
 
-  .product-name {
-    margin: 8px 0;
-    font-size: 14px;
-    font-weight: bold;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  ::placeholder {
+    color: #A8A8A8;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    color: #A8A8A8;
+  }
+
+  ::-ms-input-placeholder {
+    color: #A8A8A8;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #E0E0E0;
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
   }
 }

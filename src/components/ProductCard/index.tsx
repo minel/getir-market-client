@@ -3,10 +3,6 @@ import { AddToBasket } from "../AddToBasket";
 import { IProduct } from "../../models/IProduct";
 import { PriceBox } from "../PriceBox";
 import React from 'react';
-import { connect } from "react-redux";
-import { getProducts } from "../../actions/productsActions";
-import { useEffect } from 'react';
-// todo: muhtemelen add to basket action'ı bağlanacak
 
 type IProductCardProps = {
   product: IProduct;

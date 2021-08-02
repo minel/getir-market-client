@@ -7,7 +7,6 @@ import { useCallback } from 'react';
 import { useSelector } from "react-redux";
 
 type IBasketPreviewProps = {
-
 };
 
 export const BasketPreview: React.FC<any> = (props: IBasketPreviewProps) => {

@@ -1,22 +1,17 @@
 import { ICompany } from "../models/ICompany";
+import { IFilterState } from "../models/IFilterState";
 import { companyActionTypes } from "../actions/companyActions";
 
-
-export type CompanyState = Readonly<{
-  companies: ICompany[];
-  isLoading: boolean;
-}>;
-
-const INITIAL_STATE: CompanyState = {
-  companies: [],
-  isLoading: true
+const INITIAL_STATE: IFilterState<ICompany> = {
+  data: [],
+  isLoading: true,
+  itemName: "Companies"
 }
 export const companyReducer: any = (state = INITIAL_STATE, action) => {
-
   switch (action.type){
     case companyActionTypes.GET_COMPANIES_START: return { ...state, isLoading: true }
-    case companyActionTypes.GET_COMPANIES_SUCCESS: return { ...state, isLoading: false, companies: action.payload.companies };
-    case companyActionTypes.GET_COMPANIES_ERROR: return { ...state, isLoading: false, companies: []};
+    case companyActionTypes.GET_COMPANIES_SUCCESS: return { ...state, isLoading: false, data: action.payload };
+    case companyActionTypes.GET_COMPANIES_ERROR: return { ...state, isLoading: false, data: []};
     default: return state;
   }
   return state;

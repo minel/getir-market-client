@@ -7,8 +7,8 @@ export const companyActionTypes = {
 }
 
 
-export const getCompanies: any = () => async (dispatch: any) => {
-  const res = await getApiCompanies();
+export const getCompanies: any = (searchVal: any) => async (dispatch: any) => {
+  const res = await getApiCompanies(searchVal);
   if (res) {
     dispatch({ type: companyActionTypes.GET_COMPANIES_SUCCESS, payload: res });
   } else {

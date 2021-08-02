@@ -16,9 +16,10 @@ export const getApiProducts = async (page: number = DEFAULT_PRODUCT_PAGE_NUMBER,
   }
 };
 
-export const getApiCompanies = async () => {
+export const getApiCompanies = async (searchVal: any) => {
   try {
-    const response: AxiosResponse<ICompany[]> = await axios.get(`${MARKET_API_URL}/companies`);
+    // we can pass the data dynamically
+    const response: AxiosResponse<ICompany[]> = await axios.get(`${MARKET_API_URL}/companies`, { params: { name_like: searchVal }});
 
     if (response && response.data) {
       return response.data;

@@ -12,6 +12,12 @@ aside.basket {
   font-size: 14px;
   letter-spacing: .16px;
 
+  .no-item {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #697488;
+  }
+
   .basket-item {
     display: flex;
     justify-content: space-between;
