@@ -1,7 +1,7 @@
 # Getir Market Client
 A client project for Getir Web Market
 
-##Tech Stack
+## Tech Stack
 - **React** for Frontend Library
 - **Redux** for State Management
 - **Redux Thunk** for async Actions
@@ -10,14 +10,15 @@ A client project for Getir Web Market
 - **Eslint** for code linting
 - **Axios** for Http Client
 
-##Project Structure
+## Project Structure
 ![Structure](https://i.ibb.co/tBFpBf0/design.png)
 
-##Deployment
+## Deployment
 Project already running on Heroku, you can explore below in url.
 You may have to wait a bit when first open. (It goes to sleep mode when not used for a while.)
-- [Getir Market Client](https://getir-market-client.herokuapp.com/)
-- [Getir Market Api](https://getir-market-api.herokuapp.com/)
+- [Getir Market Client App](https://getir-market-client.herokuapp.com/)
+- [Getir Market Api App](https://getir-market-api.herokuapp.com/)
+- [Getir Market Api Github Repo](https://github.com/minel/getir-market-api)
 
 ## Available Scripts
 
